@@ -40,15 +40,13 @@ export function GET(req) {
 
 大抵 (というか全て) API は特定の method のみを想定しているはずなので、これまで実装者は以下のような分岐を書く必要がありました。
 
-````typescript
-
 ```typescript
 export default function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(403).json({ error: 'Method not allowed' });
   }
 }
-````
+```
 
 これを愚直に書いていたか、ある程度共通化していたか、うまいことミドルウェアを噛ませていたかはさておき、単純に嬉しい update かと思います。
 
